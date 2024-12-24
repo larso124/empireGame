@@ -1,11 +1,11 @@
 {% extends "skeleton.html" %}
 
 {% block content %}
-<h2>Wait here</h2>
+<p style="font-size: 2rem; max-width: 80vw; text-align: center;"><b>Waiting for everyone to submit ...</b></p>
 <form action="/play" method="get">
-    <input type="submit" value="Start">
+    <input type="submit" value="Start" style="min-height: 3rem; min-width: 8rem;">
 </form>
-
+<br><br><br>
 Number of players = {{number_players}}
 
 <script>

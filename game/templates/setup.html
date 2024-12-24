@@ -2,12 +2,12 @@
 
 {% block content %}
 {% for name in names %}
-<ul>
+<ul style="list-style-type: none; padding: 0px; margin: 10px 10px; font-size: xx-large;">
     <li><a href="/crossout/{{name.id}}">{{name.name}} {{name.status}}</a></li>
 </ul>
 {% endfor %}
 
-<form action="/reset/" method="get">
+<form action="/reset/" method="get" style="margin-top: 200px;">
     <input type="submit" value="Reset">
 </form>
 
