@@ -1,5 +1,23 @@
 {% extends "skeleton.html" %}
 
 {% block content %}
-game play
+{% for name in names %}
+<ul>
+    <li>
+        {% if name.status %}
+        <s>{{name.name}}</s>
+        {% else %}
+        {{name.name}}
+        {% endif %}
+
+    </li>
+</ul>
+{% endfor %}
+
+<script>
+    setInterval(function(){
+        location.reload();
+    }, 5000);
+</script>
+
 {% endblock %}

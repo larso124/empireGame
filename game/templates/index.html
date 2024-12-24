@@ -1,10 +1,15 @@
 {% extends "skeleton.html" %}
 
 {% block content %}
-
-<form action="">
-    <label for="name">Enter Name</label>
-    <input type="text" name="name" id="name">
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
 </form>
-<button>Submit</button>
+<p>
+    Your empire name can be a character, celebrity, or historical figure! 
+    It should be a name that anyone in the room COULD know, theoretically -
+    if they had read that book, watched that show, or paid attention in class
+    So, don't make up a name or enter an improper noun
+</p>
 {% endblock %}

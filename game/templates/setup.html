@@ -1,0 +1,14 @@
+{% extends "skeleton.html" %}
+
+{% block content %}
+{% for name in names %}
+<ul>
+    <li><a href="/crossout/{{name.id}}">{{name.name}} {{name.status}}</a></li>
+</ul>
+{% endfor %}
+
+<form action="/reset/" method="get">
+    <input type="submit" value="Reset">
+</form>
+
+{% endblock %}

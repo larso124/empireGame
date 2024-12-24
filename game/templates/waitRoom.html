@@ -1,0 +1,16 @@
+{% extends "skeleton.html" %}
+
+{% block content %}
+<h2>Wait here</h2>
+<form action="/play" method="get">
+    <input type="submit" value="Start">
+</form>
+
+Number of players = {{number_players}}
+
+<script>
+    setInterval(function(){
+        location.reload();
+    }, 5000);
+</script>
+{% endblock %}
