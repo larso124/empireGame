@@ -20,6 +20,7 @@ def get_name(request):
                     "id": len(names)+1
                 })
             with open('names.json', 'w') as fp:
+                random.shuffle(names)
                 json.dump(names, fp)
             return HttpResponseRedirect("/waitroom/")
     else:
@@ -29,7 +30,7 @@ def get_name(request):
 def game_play(request):
     with open('names.json', 'r') as fp:
         names = json.load(fp)
-        random.shuffle(names)
+        # random.shuffle(names)
     return render(request, "gamePlay.html", {"names": names})
 
 def setup(request):
