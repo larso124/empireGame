@@ -21,6 +21,8 @@ def get_name(request):
                 })
             with open('names.json', 'w') as fp:
                 random.shuffle(names)
+                for i, name in enumerate(names):
+                    name['id'] = i
                 json.dump(names, fp)
             return HttpResponseRedirect("/waitroom/")
     else:
@@ -52,7 +54,7 @@ def reset(request):
 def crossout(request, id):
     with open('names.json', 'r') as fp:
         names = json.load(fp)
-    names[id-1]["status"] = not names[id-1]["status"] 
+    names[id]["status"] = not names[id]["status"] 
     with open('names.json', 'w') as fp:
         json.dump(names, fp)
     return HttpResponseRedirect("/setup/")
