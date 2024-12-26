@@ -29,6 +29,7 @@ def get_name(request):
 def game_play(request):
     with open('names.json', 'r') as fp:
         names = json.load(fp)
+        random.shuffle(names)
     return render(request, "gamePlay.html", {"names": names})
 
 def setup(request):
